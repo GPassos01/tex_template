@@ -16,12 +16,12 @@
 
 ## **Por que usar este template?**
 
-- ✅ **Pronto para usar**: Funciona imediatamente no Overleaf
-- ✅ **Normas ABNT**: Formatação automática conforme padrões brasileiros
-- ✅ **Para todos os níveis**: De iniciante a avançado
-- ✅ **Universalizado**: Adaptável para qualquer universidade brasileira
-- ✅ **Referências modernas**: 22 tipos incluindo sites, documentação técnica, vídeos
-- ✅ **Totalmente documentado**: Cada linha explicada em português
+- **Pronto para usar**: Funciona imediatamente no Overleaf
+- **Normas ABNT**: Formatação automática conforme padrões brasileiros
+- **Para todos os níveis**: De iniciante a avançado
+- **Universalizado**: Adaptável para qualquer universidade brasileira
+- **Referências modernas**: 22 tipos incluindo sites, documentação técnica, vídeos
+- **Totalmente documentado**: Cada linha explicada em português
 
 ## **Começar Agora**
 
@@ -87,7 +87,7 @@ pdflatex main.tex
 | **Humanas** | [Ver exemplo](examples/humanas/) | Citações, linguística, epígrafes |
 | **Saúde** | [Ver exemplo](examples/saude/) | Tabelas clínicas, estatísticas |
 
-## 📖 **Documentação Completa**
+## **Documentação Completa**
 
 | Documento | Descrição |
 |---|---|
@@ -146,11 +146,11 @@ Este template inclui **22 categorias** de exemplos de referências:
 ```
 
 ### **O que está incluído:**
-- ✅ **Espaçamento automático**: `~` em referências e citações
-- ✅ **Matemática profissional**: Diferenciais, pontuação, subscritos
-- ✅ **Convenções científicas**: Labels estruturados, aspas corretas
-- ✅ **Posicionamento inteligente**: Figuras/tabelas em topo/base
-- ✅ **Guia completo**: **[📖 Boas Práticas LaTeX](docs/LATEX_BOAS_PRATICAS.md)**
+- **Espaçamento automático**: `~` em referências e citações
+- **Matemática profissional**: Diferenciais, pontuação, subscritos
+- **Convenções científicas**: Labels estruturados, aspas corretas
+- **Posicionamento inteligente**: Figuras/tabelas em topo/base
+- **Guia completo**: **[📖 Boas Práticas LaTeX](docs/LATEX_BOAS_PRATICAS.md)**
 
 ## **Estrutura Organizada**
 
@@ -173,11 +173,11 @@ template-abnt-latex/
 ```
 
 ### **Benefícios da estrutura:**
-- ✅ **Colaboração**: Múltiplas pessoas trabalhando simultaneamente
-- ✅ **Organização**: Cada tipo de arquivo em sua pasta
-- ✅ **Automação**: Scripts para compilação e limpeza
-- ✅ **Escalabilidade**: Estrutura que cresce com o projeto
-- ✅ **Padrão acadêmico**: Seguindo melhores práticas internacionais
+- **Colaboração**: Múltiplas pessoas trabalhando simultaneamente
+- **Organização**: Cada tipo de arquivo em sua pasta
+- **Automação**: Scripts para compilação e limpeza
+- **Escalabilidade**: Estrutura que cresce com o projeto
+- **Padrão acadêmico**: Seguindo melhores práticas internacionais
 
 **Detalhes completos**: **[Estrutura do Projeto](docs/ESTRUTURA_PROJETO.md)**
 
@@ -197,9 +197,9 @@ template-abnt-latex/
 
 ## **Suporte e Comunidade**
 
-- **[Reportar problemas](https://github.com/seu-usuario/template-abnt-latex/issues)**
-- **[Discussões](https://github.com/seu-usuario/template-abnt-latex/discussions)**
-- **Email**: [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
+- **[Reportar problemas](https://github.com/GPassos01/tex_template/issues)**
+- **[Discussões](https://github.com/GPassos01/tex_template/discussions)**
+- **Email**: [seu-email@exemplo.com](mailto:gabriel.passos@unesp.br)
 - **Discord**: [Comunidade LaTeX Brasil](https://discord.gg/latex-brasil)
 
 ## **Contribuindo**
