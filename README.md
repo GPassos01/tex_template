@@ -1,20 +1,20 @@
-# 📝 Template ABNT para LaTeX/Overleaf
+# Template ABNT para LaTeX/Overleaf
 
 <p align="center">
   <strong>Template completo para trabalhos acadêmicos brasileiros seguindo normas ABNT</strong>
 </p>
 
 <p align="center">
-  <a href="#-começar-agora">🚀 Começar Agora</a> •
-  <a href="#-características">✨ Características</a> •
-  <a href="#-documentação">📚 Documentação</a> •
-  <a href="#-exemplos">🎯 Exemplos</a> •
-  <a href="#-suporte">💬 Suporte</a>
+  <a href="#-começar-agora"> Começar Agora</a> •
+  <a href="#-características"> Características</a> •
+  <a href="#-documentação"> Documentação</a> •
+  <a href="#-exemplos"> Exemplos</a> •
+  <a href="#-suporte"> Suporte</a>
 </p>
 
 ---
 
-## 🎯 **Por que usar este template?**
+## **Por que usar este template?**
 
 - ✅ **Pronto para usar**: Funciona imediatamente no Overleaf
 - ✅ **Normas ABNT**: Formatação automática conforme padrões brasileiros
@@ -23,11 +23,11 @@
 - ✅ **Referências modernas**: 22 tipos incluindo sites, documentação técnica, vídeos
 - ✅ **Totalmente documentado**: Cada linha explicada em português
 
-## 🚀 **Começar Agora**
+## **Começar Agora**
 
 ### **Opção 1: Overleaf (Recomendado)**
-1. **[📥 Baixe os arquivos](https://github.com/seu-usuario/template-abnt-latex/archive/main.zip)**
-2. **[🌐 Acesse o Overleaf](https://www.overleaf.com)**
+1. **[Baixe os arquivos](https://github.com/seu-usuario/template-abnt-latex/archive/main.zip)**
+2. **[Acesse o Overleaf](https://www.overleaf.com)**
 3. **Upload**: Clique em "New Project" → "Upload Project"
 4. **Arquivo principal**: Abra `template/main.tex`
 5. **Compile**: Clique em "Recompile" e pronto! 🎉
@@ -53,83 +53,75 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-## ✨ **Características**
+## **Características**
 
 | Característica | Descrição |
 |---|---|
-| 📚 **Padrão ABNT** | Margens, fontes, espaçamento e citações conforme normas |
-| 🏛️ **Multi-instituição** | UNESP, USP, UNICAMP e outras universidades |
-| 🔬 **Multi-área** | Exatas, Humanas, Computação com pacotes específicos |
-| 📖 **Tipos de trabalho** | TCC, Dissertação, Tese, Relatórios |
-| 🌐 **Referências modernas** | Sites, GitHub, arXiv, YouTube, podcasts, software |
-| 💻 **Códigos** | Syntax highlighting para Python, Java, C++, etc. |
-| 📊 **Elementos gráficos** | Figuras, tabelas, equações, algoritmos |
-| 📝 **Boas práticas LaTeX** | Formatação científica profissional automática |
-| 🎓 **Iniciante-friendly** | Comentários detalhados em português |
+| **Padrão ABNT** | Margens, fontes, espaçamento e citações conforme normas |
+| **Multi-instituição** | UNESP, USP, UNICAMP e outras universidades |
+| **Multi-área** | Exatas, Humanas, Computação com pacotes específicos |
+| **Tipos de trabalho** | TCC, Dissertação, Tese, Relatórios |
+| **Referências modernas** | Sites, GitHub, arXiv, YouTube, podcasts, software |
+| **Códigos** | Syntax highlighting para Python, Java, C++, etc. |
+| **Elementos gráficos** | Figuras, tabelas, equações, algoritmos |
+| **Boas práticas LaTeX** | Formatação científica profissional automática |
+| **Iniciante-friendly** | Comentários detalhados em português |
 
-## 📚 **Tipos de trabalho suportados**
+## **Tipos de trabalho suportados**
 
-- 🎓 **Trabalho de Conclusão de Curso (TCC)**
-- 📄 **Dissertação de Mestrado**
-- 📖 **Tese de Doutorado**
-- 📊 **Relatório de Iniciação Científica**
-- 📝 **Trabalho de Disciplina**
-- 📋 **Artigo Científico**
+- **Trabalho de Conclusão de Curso (TCC)**
+- **Dissertação de Mestrado**
+- **Tese de Doutorado**
+- **Relatório de Iniciação Científica**
+- **Trabalho de Disciplina**
+- **Artigo Científico**
 
-## 🏛️ **Universidades testadas**
-
-- ✅ **UNESP** (todas as unidades)
-- ✅ **USP** (todas as unidades)
-- ✅ **UNICAMP**
-- ✅ **UFMG**, **UFRJ**, **UFSC**
-- ✅ **Universidades privadas**
-
-## 🎯 **Exemplos de uso**
+## **Exemplos de uso**
 
 ### **Por área do conhecimento:**
 
 | Área | Template | Demonstração |
 |---|---|---|
-| 🔬 **Ciências Exatas** | [Ver exemplo](examples/exatas/) | Equações, unidades SI, gráficos |
-| 💻 **Computação** | [Ver exemplo](examples/computacao/) | Códigos, algoritmos, diagramas |
-| 📚 **Humanas** | [Ver exemplo](examples/humanas/) | Citações, linguística, epígrafes |
-| ⚕️ **Saúde** | [Ver exemplo](examples/saude/) | Tabelas clínicas, estatísticas |
+| **Ciências Exatas** | [Ver exemplo](examples/exatas/) | Equações, unidades SI, gráficos |
+| **Computação** | [Ver exemplo](examples/computacao/) | Códigos, algoritmos, diagramas |
+| **Humanas** | [Ver exemplo](examples/humanas/) | Citações, linguística, epígrafes |
+| **Saúde** | [Ver exemplo](examples/saude/) | Tabelas clínicas, estatísticas |
 
 ## 📖 **Documentação Completa**
 
 | Documento | Descrição |
 |---|---|
-| **[📋 Guia Rápido](docs/GUIA_RAPIDO.md)** | Começar em 5 minutos |
-| **[⚙️ Configuração](docs/CONFIGURACAO.md)** | Personalizar para sua universidade |
-| **[📁 Estrutura do Projeto](docs/ESTRUTURA_PROJETO.md)** | **NOVO!** Organização profissional de pastas |
-| **[📝 Boas Práticas LaTeX](docs/LATEX_BOAS_PRATICAS.md)** | **NOVO!** Formatação científica profissional |
-| **[❓ FAQ](docs/FAQ.md)** | Perguntas frequentes com 50+ respostas |
+| **[Guia Rápido](docs/GUIA_RAPIDO.md)** | Começar em 5 minutos |
+| **[Configuração](docs/CONFIGURACAO.md)** | Personalizar para sua universidade |
+| **[Estrutura do Projeto](docs/ESTRUTURA_PROJETO.md)** | **NOVO!** Organização profissional de pastas |
+| **[Boas Práticas LaTeX](docs/LATEX_BOAS_PRATICAS.md)** | **NOVO!** Formatação científica profissional |
+| **[FAQ](docs/FAQ.md)** | Perguntas frequentes com 50+ respostas |
 
-## 🌟 **Referências Bibliográficas Modernas**
+## **Referências Bibliográficas Modernas**
 
 Este template inclui **22 categorias** de exemplos de referências:
 
 <details>
-<summary>📚 <strong>Ver todas as categorias</strong></summary>
+<summary><strong>Ver todas as categorias</strong></summary>
 
-### **📖 Fontes Tradicionais**
+### **Fontes Tradicionais**
 - Livros e monografias
 - Artigos científicos 
 - Teses e dissertações
 - Capítulos de livros
 
-### **🌐 Fontes Digitais**
+### **Fontes Digitais**
 - Sites governamentais (IBGE, MEC, ANVISA)
 - Empresas (GitHub, Google, Microsoft, OpenAI)
 - Organizações (WHO, IEEE, ONU)
 - Documentação técnica (Python, Docker)
 
-### **📊 Pesquisa e Dados**
+### **Pesquisa e Dados**
 - Bases de dados (Kaggle, World Bank)
 - Preprints (arXiv, bioRxiv)
 - Relatórios técnicos (NASA, IPCC)
 
-### **🎓 Recursos Educacionais**
+### **Recursos Educacionais**
 - Vídeos (MIT, Stanford, YouTube)
 - Podcasts especializados
 - Cursos online (Coursera, edX)
@@ -137,11 +129,11 @@ Este template inclui **22 categorias** de exemplos de referências:
 
 </details>
 
-## 📝 **Boas Práticas LaTeX Científico**
+## **Boas Práticas LaTeX Científico**
 
-**🆕 NOVO!** Implementação das melhores práticas baseadas no [LaTeX Best Practices](https://github.com/temken/latex-best-practices):
+**NOVO!** Implementação das melhores práticas baseadas no [LaTeX Best Practices](https://github.com/temken/latex-best-practices):
 
-### **🔧 Comandos Automáticos**
+### **Comandos Automáticos**
 ```latex
 % Referências com espaçamento automático
 \figref{fig:exemplo}    % → Fig.~\ref{fig:exemplo}
@@ -153,16 +145,16 @@ Este template inclui **22 categorias** de exemplos de referências:
 25\unit{°C}             % Unidades com espaçamento correto
 ```
 
-### **✨ O que está incluído:**
+### **O que está incluído:**
 - ✅ **Espaçamento automático**: `~` em referências e citações
 - ✅ **Matemática profissional**: Diferenciais, pontuação, subscritos
 - ✅ **Convenções científicas**: Labels estruturados, aspas corretas
 - ✅ **Posicionamento inteligente**: Figuras/tabelas em topo/base
 - ✅ **Guia completo**: **[📖 Boas Práticas LaTeX](docs/LATEX_BOAS_PRATICAS.md)**
 
-## 📁 **Estrutura Organizada**
+## **Estrutura Organizada**
 
-**🆕 NOVO!** Estrutura profissional baseada em [melhores práticas acadêmicas](https://www.glennjlea.com/latex/latex-project_file_structure/):
+**NOVO!** Estrutura profissional baseada em [melhores práticas acadêmicas](https://www.glennjlea.com/latex/latex-project_file_structure/):
 
 ```
 template-abnt-latex/
@@ -180,16 +172,16 @@ template-abnt-latex/
 └── 📁 docs/            # Documentação completa
 ```
 
-### **🚀 Benefícios da estrutura:**
+### **Benefícios da estrutura:**
 - ✅ **Colaboração**: Múltiplas pessoas trabalhando simultaneamente
 - ✅ **Organização**: Cada tipo de arquivo em sua pasta
 - ✅ **Automação**: Scripts para compilação e limpeza
 - ✅ **Escalabilidade**: Estrutura que cresce com o projeto
 - ✅ **Padrão acadêmico**: Seguindo melhores práticas internacionais
 
-**📖 Detalhes completos**: **[📁 Estrutura do Projeto](docs/ESTRUTURA_PROJETO.md)**
+**Detalhes completos**: **[Estrutura do Projeto](docs/ESTRUTURA_PROJETO.md)**
 
-### **📊 Comparação antes/depois:**
+### **Comparação antes/depois:**
 | Tradicional | Com boas práticas |
 |-------------|-------------------|
 | `\int f(x) dx` | `\int f(x) \, \mathrm{d}x` |
@@ -197,56 +189,48 @@ template-abnt-latex/
 | `E = mc^2` | `E = mc^2 \,.` |
 | `N_{particulas}` | `N_\mathrm{partículas}` |
 
-## 🔧 **Requisitos**
+## **Requisitos**
 
 - **Overleaf**: Funciona imediatamente (recomendado)
 - **LaTeX local**: TeXLive 2020+ ou MiKTeX
 - **Compilador**: pdfLaTeX (padrão)
 
-## 📞 **Suporte e Comunidade**
+## **Suporte e Comunidade**
 
-- 🐛 **[Reportar problemas](https://github.com/seu-usuario/template-abnt-latex/issues)**
-- 💬 **[Discussões](https://github.com/seu-usuario/template-abnt-latex/discussions)**
-- 📧 **Email**: [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
-- 🎓 **Discord**: [Comunidade LaTeX Brasil](https://discord.gg/latex-brasil)
+- **[Reportar problemas](https://github.com/seu-usuario/template-abnt-latex/issues)**
+- **[Discussões](https://github.com/seu-usuario/template-abnt-latex/discussions)**
+- **Email**: [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
+- **Discord**: [Comunidade LaTeX Brasil](https://discord.gg/latex-brasil)
 
-## 🤝 **Contribuindo**
+## **Contribuindo**
 
 Contribuições são bem-vindas! Veja como ajudar:
 
-1. 🍴 **Fork** o projeto
-2. 🔄 **Clone** sua cópia
-3. ✨ **Faça** suas melhorias
-4. 📝 **Commit** suas mudanças
-5. 🚀 **Envie** um Pull Request
+1. **Fork** o projeto
+2. **Clone** sua cópia
+3. **Faça** suas melhorias
+4. **Commit** suas mudanças
+5. **Envie** um Pull Request
 
 ### **Como contribuir:**
-- 🐛 Reportar bugs
-- 💡 Sugerir melhorias
-- 📚 Melhorar documentação
-- 🎯 Adicionar exemplos
-- 🔧 Corrigir problemas
+- Reportar bugs
+- Sugerir melhorias
+- Melhorar documentação
+- Adicionar exemplos
+- Corrigir problemas
 
-## 📊 **Estatísticas**
+## **Estatísticas**
 
 ![GitHub stars](https://img.shields.io/github/stars/seu-usuario/template-abnt-latex)
 ![GitHub forks](https://img.shields.io/github/forks/seu-usuario/template-abnt-latex)
 ![GitHub issues](https://img.shields.io/github/issues/seu-usuario/template-abnt-latex)
 ![GitHub license](https://img.shields.io/github/license/seu-usuario/template-abnt-latex)
 
-## 🏆 **Showcase**
-
-Trabalhos criados com este template:
-
-- 🎓 **[TCC - Inteligência Artificial](showcase/tcc-ia.pdf)** - UNESP Rio Claro
-- 📄 **[Dissertação - Blockchain](showcase/dissertacao-blockchain.pdf)** - USP São Carlos  
-- 📖 **[Tese - Computação Quântica](showcase/tese-quantum.pdf)** - UNICAMP
-
-## 📜 **Licença**
+## **Licença**
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 🙏 **Agradecimentos**
+## **Agradecimentos**
 
 - **[abntex2](https://github.com/abntex/abntex2)**: Classe LaTeX base
 - **[Overleaf](https://www.overleaf.com)**: Plataforma de edição online
@@ -255,9 +239,9 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 ---
 
 <p align="center">
-  <strong>⭐ Se este template te ajudou, deixe uma estrela no GitHub!</strong>
+  <strong> Se este template te ajudou, deixe uma estrela no GitHub!</strong>
 </p>
 
 <p align="center">
-  Feito com ❤️ para a comunidade acadêmica brasileira
+  Feito com carinho para a comunidade acadêmica brasileira
 </p> 
