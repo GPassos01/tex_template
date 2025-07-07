@@ -1,0 +1,1150 @@
+% ===================================================================
+% TEMPLATE ABNT PARA IGCE-UNESP
+% Desenvolvido para uso no Overleaf
+% Última atualização: 2025
+% Autor: Gabriel Passos de Oliveira
+% Email: gabriel.passos@unesp.br
+% GitHub: https://github.com/gpassos01
+%
+% Este template está totalmente comentado para facilitar o uso por
+% pessoas que nunca trabalharam com LaTeX antes.
+% ===================================================================
+
+% Comando necessário para corrigir problemas de encoding em alguns casos
+\UseRawInputEncoding
+
+% Classe do documento - abntex2 é a classe padrão para documentos ABNT no Brasil
+% [12pt] = tamanho da fonte (12 pontos conforme ABNT)
+% [a4paper] = papel A4 (padrão brasileiro)
+% [brazil] = idioma português brasileiro
+% [oneside] = impressão em apenas um lado da folha
+\documentclass[12pt, a4paper, brazil, oneside]{abntex2}
+
+% ===================================================================
+% PACOTES ESSENCIAIS
+% ===================================================================
+
+% Pacotes para codificação de caracteres e idioma
+\usepackage[utf8]{inputenc}        % Permite usar acentos diretamente no texto
+\usepackage[T1]{fontenc}           % Codificação de fonte para caracteres especiais
+\usepackage[brazil]{babel}         % Hifenização e termos em português brasileiro
+
+% ===================================================================
+% OPÇÕES DE FONTES (ESCOLHA UMA - TODAS SÃO ACEITAS PELA ABNT)
+% ===================================================================
+
+% OPÇÃO 1: Times New Roman (padrão acadêmico mais comum)
+\usepackage{times}                 % Fonte Times New Roman (similar)
+
+% OPÇÃO 2: Arial/Helvetica (descomente para usar)
+% \usepackage{helvet}              % Fonte Helvetica (similar ao Arial)
+% \renewcommand{\familydefault}{\sfdefault}
+
+% OPÇÃO 3: Computer Modern (padrão LaTeX - também aceita)
+% (não precisa de pacote, é a fonte padrão)
+
+% OPÇÃO 4: Latin Modern (versão melhorada da Computer Modern)
+% \usepackage{lmodern}
+
+% ===================================================================
+% PACOTES PARA FORMATAÇÃO E APARÊNCIA
+% ===================================================================
+
+\usepackage{graphicx}              % Para inserir imagens e gráficos
+\usepackage{geometry}              % Para controlar margens e layout da página
+\usepackage{hyperref}              % Para criar links clicáveis e sumário interativo
+
+% ===================================================================
+% SISTEMA DE CITAÇÕES (ESCOLHA UM ESTILO)
+% ===================================================================
+
+% OPÇÃO 1: Sistema autor-data (mais comum em humanas/sociais)
+\usepackage[alf]{abntex2cite}      % Sistema ABNT autor-data: (SILVA, 2020)
+
+% OPÇÃO 2: Sistema numérico (mais comum em exatas/engenharias)
+% \usepackage[num]{abntex2cite}    % Sistema ABNT numérico: [1], [2], etc.
+
+% ===================================================================
+% PACOTES BÁSICOS (SEMPRE NECESSÁRIOS)
+% ===================================================================
+
+\usepackage{indentfirst}           % Indenta o primeiro parágrafo de cada seção
+\usepackage{microtype}             % Melhora a qualidade da tipografia
+\usepackage{xcolor}                % Para definir cores personalizadas
+
+% ===================================================================
+% PACOTES PARA MATEMÁTICA E CIÊNCIAS EXATAS
+% ===================================================================
+
+\usepackage{amsmath}               % Ambientes e comandos matemáticos avançados
+\usepackage{amssymb}               % Símbolos matemáticos adicionais
+\usepackage{amsfonts}              % Fontes matemáticas adicionais
+
+% Descomente os pacotes abaixo conforme sua área:
+
+% Para áreas com muita matemática (Física, Matemática, Engenharias):
+% \usepackage{mathtools}           % Ferramentas matemáticas avançadas
+% \usepackage{physics}             % Notação física (derivadas, vetores, etc.)
+% \usepackage{siunitx}             % Sistema Internacional de Unidades
+% \usepackage{cancel}              % Para "cancelar" termos em equações
+
+% Para Química:
+% \usepackage[version=4]{mhchem}   % Fórmulas químicas: \ce{H2SO4}
+% \usepackage{chemfig}             % Estruturas químicas
+
+% Para Estatística:
+% \usepackage{pgfplots}            % Gráficos estatísticos avançados
+% \usepackage{booktabs}            % Tabelas profissionais
+
+% ===================================================================
+% PACOTES PARA PROGRAMAÇÃO E COMPUTAÇÃO
+% ===================================================================
+
+\usepackage{listings}              % Para inserir códigos com formatação
+
+% Para áreas de Computação/Tecnologia (descomente se necessário):
+% \usepackage{algorithm}           % Algoritmos em pseudocódigo
+% \usepackage{algorithmic}         % Comandos para algoritmos
+% \usepackage{url}                 % URLs com quebra de linha
+% \usepackage{verbatim}            % Texto literal (código inline)
+
+% ===================================================================
+% PACOTES PARA CIÊNCIAS HUMANAS E SOCIAIS
+% ===================================================================
+
+% Para Linguística:
+% \usepackage{gb4e}                % Exemplos linguísticos numerados
+% \usepackage{tipa}                % Símbolos fonéticos IPA
+
+% Para citações especiais:
+% \usepackage{csquotes}            % Citações contextuais
+% \usepackage{epigraph}            % Epígrafes em capítulos
+
+% Pacotes para controle de espaçamento e posicionamento
+\usepackage{caption}               % Para personalizar legendas de figuras e tabelas
+\usepackage{setspace}              % Para controlar espaçamento entre linhas
+\usepackage{float}                 % Para controlar posicionamento de figuras
+\usepackage{placeins}              % Para controlar quebras de página
+\usepackage{underscore}            % Para usar underscore sem problemas
+\usepackage{enumitem}              % Para personalizar listas numeradas e não numeradas
+
+% ===================================================================
+% COMANDOS ÚTEIS PARA ESCRITA CIENTÍFICA
+% ===================================================================
+
+% Diferencial não-itálico (boa prática matemática)
+\newcommand{\dd}{\mathrm{d}}
+
+% Comando para citações com espaço não-quebrável automático
+\newcommand{\citep}[1]{~\cite{#1}}
+
+% Comandos para referências com espaço automático
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+\newcommand{\tabref}[1]{Tab.~\ref{#1}}
+\newcommand{\eqnref}[1]{Eq.~\eqref{#1}}
+\newcommand{\secref}[1]{Seção~\ref{#1}}
+
+% Comando para unidades com espaço não-quebrável
+\newcommand{\unit}[1]{\,\mathrm{#1}}
+
+% Exemplo de uso:
+% Integral: \int f(x) \, \dd x
+% Referência: \figref{fig:resultado}
+% Unidade: 25\unit{°C}
+
+% ===================================================================
+% CONFIGURAÇÕES PARA CÓDIGOS DE PROGRAMAÇÃO
+% ===================================================================
+
+% Definição de cores personalizadas para destacar códigos
+\definecolor{codegreen}{rgb}{0,0.6,0}      % Verde para comentários
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}   % Cinza para números de linha
+\definecolor{codepurple}{rgb}{0.58,0,0.82} % Roxo para strings
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92} % Cor de fundo (bege claro)
+
+% ===================================================================
+% CONFIGURAÇÕES PARA CÓDIGOS - ESCOLHA SEU ESTILO
+% ===================================================================
+
+% ESTILO 1: Com numeração de linhas (recomendado para trabalhos técnicos)
+\lstset{
+  backgroundcolor=\color{backcolour},    % Cor de fundo dos códigos
+  basicstyle=\footnotesize\ttfamily,     % Fonte pequena e monoespaçada
+  lineskip=1pt,                          % Espaçamento entre linhas
+  breakatwhitespace=false,               % Não quebra linha apenas em espaços
+  breaklines=true,                       % Quebra linhas longas automaticamente
+  captionpos=t,                          % Posição da legenda (top = topo)
+  commentstyle=\color{codegreen}\itshape, % Estilo dos comentários (verde e itálico)
+  deletekeywords={...},                  % Remove palavras-chave específicas
+  escapeinside={\%*}{*)-},               % Permite LaTeX dentro do código
+  extendedchars=true,                    % Suporte a caracteres especiais
+  frame=single,                          % Borda simples ao redor do código
+  keepspaces=true,                       % Preserva espaços no código
+  keywordstyle=\color{blue},             % Palavras-chave em azul
+  language=Python,                       % ALTERE: Python, Java, C, C++, JavaScript, etc.
+  numbers=none,                          % ALTERE: none, left, right
+  % Tratamento de caracteres especiais e acentos
+  literate={_}{\_}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ã}{{\~a}}1 {õ}{{\~o}}1 {ç}{{\c{c}}}1,
+  numbersep=5pt,                         % Distância entre números e código
+  numberstyle=\tiny\color{codegray},     % Estilo dos números de linha
+  rulecolor=\color{black},               % Cor da borda
+  showspaces=false,                      % Não mostra espaços
+  showstringspaces=false,                % Não mostra espaços em strings
+  showtabs=false,                        % Não mostra tabs
+  stepnumber=1,                          % Intervalo de numeração (1=todas, 5=a cada 5, etc.)
+  stringstyle=\color{codepurple},        % Cor das strings
+  tabsize=2,                             % Tamanho do tab (2 ou 4 são comuns)
+  title=\lstname,                        % Título baseado no nome do arquivo
+  frameround=tttt,                       % Cantos arredondados da borda
+  % Margens internas da caixa de código
+  framexleftmargin=8pt,
+  framexrightmargin=8pt,
+  framextopmargin=8pt,
+  framexbottommargin=8pt,
+  xleftmargin=8pt,                       % Margem esquerda
+  xrightmargin=8pt,                      % Margem direita
+  aboveskip=12pt,                        % Espaço antes do código
+  belowskip=12pt,                        % Espaço depois do código
+  float                                  % Permite que o código "flutue" na página
+}
+
+% ===================================================================
+% CONFIGURAÇÕES ALTERNATIVAS PARA CÓDIGOS (DESCOMENTE PARA USAR)
+% ===================================================================
+
+% ESTILO 2: Sem borda (mais limpo)
+% \lstset{
+%   backgroundcolor=\color{backcolour},
+%   basicstyle=\footnotesize\ttfamily,
+%   breaklines=true,
+%   commentstyle=\color{codegreen}\itshape,
+%   keywordstyle=\color{blue},
+%   language=Python,
+%   numbers=left,
+%   numberstyle=\tiny\color{codegray},
+%   stringstyle=\color{codepurple},
+%   frame=none,                          % Sem borda
+%   xleftmargin=0pt,
+%   framexleftmargin=0pt
+% }
+
+% ESTILO 3: Monocromático (para impressão P&B)
+% \lstset{
+%   backgroundcolor=\color{white},
+%   basicstyle=\footnotesize\ttfamily,
+%   breaklines=true,
+%   commentstyle=\itshape,               % Sem cor, apenas itálico
+%   keywordstyle=\bfseries,              % Sem cor, apenas negrito
+%   language=Python,
+%   numbers=left,
+%   numberstyle=\tiny,
+%   stringstyle=\itshape,
+%   frame=single
+% }
+
+% ===================================================================
+% CONFIGURAÇÕES DE LAYOUT DA PÁGINA (MARGENS ABNT)
+% ===================================================================
+
+% Definição das margens conforme normas ABNT
+\geometry{
+    a4paper,          % Tamanho do papel A4
+    left=3cm,         % Margem esquerda: 3cm (padrão ABNT)
+    right=2cm,        % Margem direita: 2cm (padrão ABNT)
+    top=3cm,          % Margem superior: 3cm (padrão ABNT)
+    bottom=2cm,       % Margem inferior: 2cm (padrão ABNT)
+    headheight=15pt   % Altura do cabeçalho
+}
+
+% ===================================================================
+% CONFIGURAÇÕES DE ESPAÇAMENTO E PARÁGRAFOS
+% ===================================================================
+
+% Recuo da primeira linha de cada parágrafo (1,25cm conforme ABNT)
+\setlength{\parindent}{1.25cm}
+
+% Espaçamento entre parágrafos (ABNT recomenda 0pt - sem espaço extra)
+\setlength{\parskip}{0pt}
+
+% ===================================================================
+% CONFIGURAÇÕES DE LISTAS (ITEMIZE E ENUMERATE)
+% ===================================================================
+
+% Configurações para listas não numeradas (itemize)
+% leftmargin: alinhamento da margem esquerda
+% itemsep: espaço entre itens
+% parsep: espaço entre parágrafos dentro de um item
+% topsep: espaço antes e depois da lista
+\setlist[itemize]{leftmargin=1.25cm, itemsep=0pt, parsep=0pt, topsep=0pt}
+
+% Configurações para listas numeradas (enumerate) - mesmas configurações
+\setlist[enumerate]{leftmargin=1.25cm, itemsep=0pt, parsep=0pt, topsep=0pt}
+
+% ===================================================================
+% CONFIGURAÇÕES DE FONTES DOS TÍTULOS (ABNT)
+% ===================================================================
+
+% Fonte dos títulos dos capítulos: romana (Times), negrito
+\renewcommand{\ABNTEXchapterfont}{\rmfamily\bfseries}
+% Tamanho da fonte dos capítulos: large (maior que o texto normal)
+\renewcommand{\ABNTEXchapterfontsize}{\large}
+
+% Fonte dos títulos das seções: romana (Times), negrito
+\renewcommand{\ABNTEXsectionfont}{\rmfamily\bfseries}
+% Tamanho da fonte das seções: normal (mesmo tamanho do texto)
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+
+% Fonte dos títulos das subseções: romana (Times), negrito
+\renewcommand{\ABNTEXsubsectionfont}{\rmfamily\bfseries}
+% Tamanho da fonte das subseções: normal
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+
+% Fonte das subsubseções: romana (Times), SEM negrito
+\renewcommand{\ABNTEXsubsubsectionfont}{\rmfamily}
+% Tamanho da fonte das subsubseções: normal
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+% ===================================================================
+% CONFIGURAÇÕES DE HYPERLINKS E PROPRIEDADES DO PDF
+% ===================================================================
+
+\hypersetup{
+    colorlinks=true,       % Ativa links coloridos (em vez de caixas coloridas)
+    citecolor=black,       % Cor das citações: preto
+    linkcolor=blue,        % Cor dos links internos: azul
+    filecolor=magenta,     % Cor dos links para arquivos: magenta
+    urlcolor=cyan,         % Cor dos links para URLs: ciano
+    % Metadados do PDF (ALTERE CONFORME SEU TRABALHO)
+    pdftitle={TÍTULO DO SEU TRABALHO AQUI},
+    pdfauthor={SEU NOME AQUI},
+    pdfsubject={Trabalho Acadêmico - IGCE UNESP},
+    pdfkeywords={palavra-chave1, palavra-chave2, palavra-chave3}
+}
+
+% ===================================================================
+% CONFIGURAÇÕES DA CAPA - ADAPTÁVEL PARA DIFERENTES INSTITUIÇÕES
+% ===================================================================
+
+% ===================================================================
+% OPÇÕES DE CONFIGURAÇÃO DA CAPA (PERSONALIZE CONFORME SUA INSTITUIÇÃO)
+% ===================================================================
+
+% Para IGCE-UNESP (padrão atual):
+\newcommand{\logoesquerda}{unesp_logo.jpg}        % Arquivo do logo esquerdo
+\newcommand{\logodireita}{igce_brasao.jpg}        % Arquivo do logo direito (ou deixe vazio)
+\renewcommand{\instituicao}{UNIVERSIDADE ESTADUAL PAULISTA "JÚLIO DE MESQUITA FILHO"}
+\newcommand{\faculdade}{INSTITUTO DE GEOCIÊNCIAS E CIÊNCIAS EXATAS}
+\newcommand{\cidade}{Rio Claro - SP}
+
+% Para outras instituições (descomente e adapte):
+
+% Para outras unidades da UNESP:
+% \renewcommand{\logoesquerda}{unesp_logo.jpg}
+% \renewcommand{\logodireita}{logo_sua_unidade.jpg}
+% \renewcommand{\faculdade}{NOME DA SUA FACULDADE/INSTITUTO}
+% \renewcommand{\cidade}{Sua Cidade - SP}
+
+% Para USP:
+% \renewcommand{\logoesquerda}{usp_logo.jpg}
+% \renewcommand{\logodireita}{logo_sua_unidade.jpg}
+% \renewcommand{\instituicao}{UNIVERSIDADE DE SÃO PAULO}
+% \renewcommand{\faculdade}{NOME DA SUA FACULDADE/INSTITUTO}
+% \renewcommand{\cidade}{Sua Cidade - SP}
+
+% Para UNICAMP:
+% \renewcommand{\logoesquerda}{unicamp_logo.jpg}
+% \renewcommand{\logodireita}{}
+% \renewcommand{\instituicao}{UNIVERSIDADE ESTADUAL DE CAMPINAS}
+% \renewcommand{\faculdade}{NOME DA SUA FACULDADE/INSTITUTO}
+% \renewcommand{\cidade}{Campinas - SP}
+
+% Para universidades privadas ou outras públicas:
+% \renewcommand{\logoesquerda}{logo_sua_universidade.jpg}
+% \renewcommand{\logodireita}{}
+% \renewcommand{\instituicao}{NOME DA SUA UNIVERSIDADE}
+% \renewcommand{\faculdade}{NOME DA SUA FACULDADE/CURSO}
+% \renewcommand{\cidade}{Sua Cidade - Estado}
+
+% ===================================================================
+% IMPLEMENTAÇÃO DA CAPA
+% ===================================================================
+
+\renewcommand{\imprimircapa}{
+    \newpage                    % Inicia uma nova página
+    \thispagestyle{empty}       % Remove numeração da página
+    \begin{center}              % Centraliza todo o conteúdo
+        \vspace*{-2cm}          % Ajuste fino da posição vertical
+        
+        % ===== CABEÇALHO COM LOGOS =====
+        \ifx\logodireita\empty
+            % Apenas um logo centralizado
+            \includegraphics[height=3cm]{\logoesquerda}
+        \else
+            % Dois logos lado a lado
+            \begin{minipage}[c]{0.45\textwidth}
+                \centering
+                \includegraphics[height=3cm]{\logoesquerda} 
+            \end{minipage}
+            \hspace{0.05\textwidth}  % Espaçamento entre os logos
+            \begin{minipage}[c]{0.45\textwidth}
+                \centering
+                \includegraphics[height=3cm]{\logodireita}
+            \end{minipage}
+        \fi
+        
+        \vspace{4cm}            % Espaço entre cabeçalho e autores
+        
+        % ===== NOME(S) DO(S) AUTOR(ES) =====
+        % ALTERE AQUI COM SEU(S) NOME(S)
+        {\large NOME DO PRIMEIRO AUTOR}
+        \vspace{0.2cm}\par      % Pequeno espaço entre autores
+        % Para trabalhos em grupo, descomente as linhas abaixo:
+        % {\large NOME DO SEGUNDO AUTOR}
+        % \vspace{0.2cm}\par
+        % {\large NOME DO TERCEIRO AUTOR}
+        % \vspace{0.2cm}\par
+        % {\large NOME DO QUARTO AUTOR}  % Adicione quantos autores necessário
+        
+        \vfill                  % Espaço flexível
+        
+        % ===== TÍTULO DO TRABALHO =====
+        % ALTERE AQUI COM O TÍTULO DO SEU TRABALHO
+        {\large \bfseries TÍTULO DO SEU TRABALHO ACADÊMICO\par}
+        
+        \vfill                  % Espaço flexível
+        \vfill                  % Mais espaço flexível (empurra para baixo)
+        
+        % ===== CIDADE E ANO =====
+        {\large \cidade}\\
+        {\large 2025}          % ALTERE O ANO CONFORME NECESSÁRIO
+    \end{center}
+    \newpage                   % Vai para a próxima página
+}
+
+% ===================================================================
+% CONFIGURAÇÕES DA FOLHA DE ROSTO - ADAPTÁVEL PARA DIFERENTES TRABALHOS
+% ===================================================================
+
+% ===================================================================
+% CONFIGURAÇÕES PARA DIFERENTES TIPOS DE TRABALHO
+% ===================================================================
+
+% Defina aqui o tipo do seu trabalho (descomente apenas uma opção):
+
+% OPÇÃO 1: Trabalho de Conclusão de Curso (TCC)
+\renewcommand{\tipotrabalho}{Trabalho de Conclusão de Curso}
+\newcommand{\grautrabalho}{Bacharelado}
+\newcommand{\cursotrabalho}{NOME DO SEU CURSO}
+\newcommand{\orientacao}{Orientador: NOME DO PROFESSOR ORIENTADOR}
+
+% OPÇÃO 2: Dissertação de Mestrado (descomente se for o caso)
+% \renewcommand{\tipotrabalho}{Dissertação}
+% \renewcommand{\grautrabalho}{Mestrado}
+% \renewcommand{\cursotrabalho}{NOME DO PROGRAMA DE PÓS-GRADUAÇÃO}
+% \renewcommand{\orientacao}{Orientador: NOME DO PROFESSOR ORIENTADOR}
+
+% OPÇÃO 3: Tese de Doutorado (descomente se for o caso)
+% \renewcommand{\tipotrabalho}{Tese}
+% \renewcommand{\grautrabalho}{Doutorado}
+% \renewcommand{\cursotrabalho}{NOME DO PROGRAMA DE PÓS-GRADUAÇÃO}
+% \renewcommand{\orientacao}{Orientador: NOME DO PROFESSOR ORIENTADOR}
+
+% OPÇÃO 4: Relatório de Iniciação Científica
+% \renewcommand{\tipotrabalho}{Relatório de Iniciação Científica}
+% \renewcommand{\grautrabalho}{}
+% \renewcommand{\cursotrabalho}{NOME DO SEU CURSO}
+% \renewcommand{\orientacao}{Orientador: NOME DO PROFESSOR ORIENTADOR}
+
+% OPÇÃO 5: Trabalho para Disciplina
+% \renewcommand{\tipotrabalho}{Trabalho}
+% \renewcommand{\grautrabalho}{}
+% \renewcommand{\cursotrabalho}{NOME DO SEU CURSO}
+% \renewcommand{\orientacao}{Docente: NOME DO PROFESSOR}
+
+% ===================================================================
+% IMPLEMENTAÇÃO DA FOLHA DE ROSTO
+% ===================================================================
+
+\renewcommand{\imprimirfolhaderosto}{
+    \newpage                    % Inicia uma nova página
+    \thispagestyle{empty}       % Remove numeração da página
+    \begin{center}              % Centraliza todo o conteúdo
+        \vspace*{-2cm}          % Ajuste fino da posição vertical
+        
+        % ===== CABEÇALHO COM LOGOS (MESMO DA CAPA) =====
+        \ifx\logodireita\empty
+            % Apenas um logo centralizado
+            \includegraphics[height=3cm]{\logoesquerda}
+        \else
+            % Dois logos lado a lado
+            \begin{minipage}[c]{0.45\textwidth}
+                \centering
+                \includegraphics[height=3cm]{\logoesquerda} 
+            \end{minipage}
+            \hspace{0.05\textwidth}  % Espaçamento entre os logos
+            \begin{minipage}[c]{0.45\textwidth}
+                \centering
+                \includegraphics[height=3cm]{\logodireita}
+            \end{minipage}
+        \fi
+        
+        \vspace{2cm}            % Espaço menor que na capa
+        
+        % ===== NOME(S) DO(S) AUTOR(ES) =====
+        % ALTERE AQUI COM SEU(S) NOME(S) (MESMOS DA CAPA)
+        {\large NOME DO PRIMEIRO AUTOR}
+        \vspace{0.2cm}\par
+        % Para trabalhos em grupo, descomente as linhas abaixo:
+        % {\large NOME DO SEGUNDO AUTOR}
+        % \vspace{0.2cm}\par
+        % {\large NOME DO TERCEIRO AUTOR}
+        % \vspace{0.2cm}\par
+        % {\large NOME DO QUARTO AUTOR}
+        
+        \vspace{1.5cm}          % Espaço entre autores e título
+        
+        % ===== TÍTULO DO TRABALHO =====
+        % ALTERE AQUI COM O TÍTULO DO SEU TRABALHO (MESMO DA CAPA)
+        {\large \bfseries TÍTULO DO SEU TRABALHO ACADÊMICO\par}
+        
+        \vspace{1.5cm}          % Espaço entre título e natureza do trabalho
+        
+        % ===== NATUREZA DO TRABALHO =====
+        % Esta seção é gerada automaticamente baseada no tipo de trabalho definido acima
+        \begin{flushright}      % Alinha à direita
+            \begin{minipage}{0.5\textwidth}  % Ocupa metade da largura
+                \linespread{1.3}\selectfont   % Espaçamento entre linhas 1.3
+                \tipotrabalho\space apresentado ao Curso de \cursotrabalho\space da \faculdade, \instituicao, como requisito parcial para obtenção do título de \ifx\grautrabalho\empty\else\grautrabalho\space em \cursotrabalho\fi.
+                \vspace{1cm}\par  % Espaço antes do nome do docente
+                \orientacao
+            \end{minipage}
+        \end{flushright}
+
+        \vfill                  % Espaço flexível (empurra cidade/ano para baixo)
+        
+        % ===== CIDADE E ANO =====
+        {\large \cidade}\\
+        {\large 2025}          % ALTERE O ANO CONFORME NECESSÁRIO
+    \end{center}
+    \newpage                   % Vai para a próxima página
+}
+
+% ===================================================================
+% CONFIGURAÇÕES DA BIBLIOGRAFIA (SISTEMA ABNT)
+% ===================================================================
+
+% Define o estilo da bibliografia conforme ABNT (autor-data)
+\bibliographystyle{abntex2-alf}
+
+% ===================================================================
+% INÍCIO DO DOCUMENTO
+% ===================================================================
+
+\begin{document}
+
+% Define espaçamento 1.5 entre linhas (conforme exigência ABNT)
+\OnehalfSpacing
+
+% ===================================================================
+% ELEMENTOS PRÉ-TEXTUAIS
+% ===================================================================
+
+% Imprime a capa (primeira página)
+\imprimircapa
+
+% Imprime a folha de rosto (segunda página)
+\imprimirfolhaderosto
+
+% ===================================================================
+% RESUMO
+% ===================================================================
+
+\begin{resumo}
+% ESCREVA AQUI O RESUMO DO SEU TRABALHO
+% O resumo deve ter entre 150 a 500 palavras
+% Deve apresentar objetivos, metodologia, resultados e conclusões
+% Seja objetivo e claro
+
+Escreva aqui o resumo do seu trabalho. O resumo deve apresentar de forma concisa os objetivos, a metodologia utilizada, os principais resultados obtidos e as conclusões do trabalho. Deve ter entre 150 a 500 palavras e ser escrito em parágrafo único, sem citações ou referências.
+
+\vspace{\onelineskip}    % Espaço de uma linha antes das palavras-chave
+\noindent               % Remove indentação da linha
+% ALTERE AS PALAVRAS-CHAVE CONFORME SEU TRABALHO (3 a 5 palavras)
+\textbf{Palavras-chave:} palavra-chave1, palavra-chave2, palavra-chave3, palavra-chave4.
+
+\end{resumo}
+
+% ===================================================================
+% LISTAS DE FIGURAS E TABELAS (OPCIONAL)
+% ===================================================================
+
+\newpage
+% Descomente a linha abaixo se seu trabalho tiver figuras
+% \listoffigures
+
+\newpage
+% Descomente a linha abaixo se seu trabalho tiver tabelas
+% \listoftables
+
+% ===================================================================
+% LISTA DE ABREVIATURAS E SIGLAS (OPCIONAL)
+% ===================================================================
+
+\newpage
+% Esta seção é opcional - use apenas se seu trabalho tiver muitas siglas
+\chapter*{LISTA DE ABREVIATURAS E SIGLAS}
+% Adicione suas siglas em ordem alfabética
+% Formato: SIGLA & Significado completo\\
+\begin{tabular}{ll}
+ABNT    & Associação Brasileira de Normas Técnicas\\
+IGCE    & Instituto de Geociências e Ciências Exatas\\
+UNESP   & Universidade Estadual Paulista\\
+% Adicione mais siglas conforme necessário
+\end{tabular}
+
+% ===================================================================
+% SUMÁRIO
+% ===================================================================
+
+\newpage
+% Redefine o título do sumário para português
+\renewcommand{\contentsname}{SUMÁRIO}
+% Gera o sumário automaticamente
+\tableofcontents
+
+% ===================================================================
+% INÍCIO DO TEXTO PRINCIPAL
+% ===================================================================
+
+\newpage
+% Define o estilo de cabeçalho das páginas (numeração no topo)
+\pagestyle{abntheadings}
+% Marca o início da parte textual do documento
+\textual
+
+% ===================================================================
+% BOAS PRÁTICAS PARA ESCRITA CIENTÍFICA EM LaTeX
+% ===================================================================
+% 
+% 📝 TEXTO E ESPAÇAMENTO:
+% • Use ~ para evitar quebras indesejadas: "Fig.~\ref{fig:exemplo}"
+% • Para abreviações: "e.g.\" (barra evita espaço extra)
+% • Aspas corretas: ``texto'' para aspas duplas
+% • Parágrafos: linha em branco no código (não \newline)
+% 
+% 🔢 EQUAÇÕES:
+% • Sempre adicione pontuação: \begin{equation} E = mc^2 \,. \end{equation}
+% • Diferencial não-itálico: \int f(x) \, \mathrm{d}x
+% • Espaço antes da pontuação: \,. ou \,,
+% • Subscripts descritivos: N_\mathrm{partículas}
+% 
+% 📊 REFERÊNCIAS:
+% • Labels descritivos: \label{eq:teorema_principal}
+% • Use \eqref{} para equações: Eq.~\eqref{eq:exemplo}
+% • Sempre com ~: "veja Fig.~\ref{fig:dados}"
+% • Início de frase: "A Equação 1 mostra..." (por extenso)
+% 
+% 🖼️ FIGURAS E TABELAS:
+% • Placement [tb] (topo/base) melhor que [h]
+% • Sempre com \label{fig:nome_descritivo}
+% • Caption informativo antes de tabelas
+% • Fonte obrigatória: \caption*{Fonte: ...}
+% 
+% 📝 CITAÇÕES:
+% • Sempre com ~: Silva~\cite{silva2023}
+% • Múltiplas: \cite{ref1,ref2,ref3}
+% • No início: "Silva (2023) propôs..."
+% 
+% ===================================================================
+
+% ===================================================================
+% EXEMPLOS DE ELEMENTOS COMUNS EM TRABALHOS ACADÊMICOS
+% ===================================================================
+
+% EXEMPLO DE COMO INSERIR FIGURA (boas práticas)
+% Descomente e adapte conforme necessário
+% \begin{figure}[tb]                                    % [tb] = topo ou base (melhor que [h])
+%   \centering                                          % Centraliza a figura
+%   \includegraphics[width=0.7\textwidth]{exemplo.png} % Insere imagem
+%   \caption{Descrição clara e informativa da figura}  % Legenda da figura
+%   \caption*{Fonte: Elaboração própria.}              % Fonte (obrigatório ABNT)
+%   \label{fig:exemplo}                                 % Label para referência
+% \end{figure}
+%
+% No texto, sempre referencie: "A Fig.~\ref{fig:exemplo} mostra que..."
+% Para duas colunas, use figure* para figura em página inteira
+
+% ===================================================================
+% CAPÍTULOS DO SEU TRABALHO
+% ===================================================================
+
+\chapter{INTRODUÇÃO}
+
+% ESCREVA AQUI A INTRODUÇÃO DO SEU TRABALHO
+% A introdução deve:
+% - Contextualizar o tema
+% - Apresentar a relevância do assunto
+% - Introduzir o problema de pesquisa
+% - Apresentar objetivos
+% - Descrever a organização do trabalho
+
+Escreva aqui a introdução do seu trabalho. A introdução deve contextualizar o tema abordado, apresentar a relevância e importância do assunto, e introduzir gradualmente o leitor ao problema de pesquisa.
+%
+Este parágrafo deve apresentar o contexto geral do tema, situando o leitor na área de conhecimento. É importante demonstrar por que o tema é relevante e atual. Use aspas corretamente: ``exemplo de citação'' ou \enquote{exemplo} se usar csquotes.
+%
+O próximo parágrafo pode abordar trabalhos relacionados ou o estado da arte na área, identificando lacunas ou oportunidades de pesquisa. Para abreviações como e.g.\ ou i.e.\, use barra invertida para espaçamento correto.
+
+\section{Problema e Justificativa}
+
+Nesta seção, apresente claramente o problema de pesquisa que seu trabalho pretende abordar. Explique por que este problema precisa ser investigado e qual a importância de encontrar uma solução.
+
+Justifique a escolha do tema e demonstre como seu trabalho pode contribuir para o avanço do conhecimento na área.
+
+\section{Objetivos}
+
+\subsection{Objetivo Geral}
+
+O objetivo geral deve expressar o que se pretende alcançar com o trabalho de forma ampla. Exemplo:
+
+O objetivo principal deste trabalho é [descrever o objetivo principal de forma clara e específica].
+
+\subsection{Objetivos Específicos}
+
+Os objetivos específicos detalham as etapas necessárias para alcançar o objetivo geral:
+
+\begin{itemize}
+    \item Primeiro objetivo específico
+    \item Segundo objetivo específico  
+    \item Terceiro objetivo específico
+    \item Adicione quantos objetivos específicos forem necessários
+\end{itemize}
+
+\section{Metodologia}
+
+Apresente brevemente a metodologia que será utilizada no trabalho. Esta seção pode ser expandida em um capítulo específico se necessário.
+
+\section{Organização do Trabalho}
+
+Descreva como o trabalho está organizado. Exemplo:
+
+Este trabalho está organizado da seguinte forma: o Capítulo 2 apresenta a fundamentação teórica; o Capítulo 3 descreve a metodologia utilizada; o Capítulo 4 apresenta os resultados obtidos; e o Capítulo 5 apresenta as conclusões e trabalhos futuros.
+
+% ===================================================================
+
+\chapter{FUNDAMENTAÇÃO TEÓRICA}
+
+% ESCREVA AQUI A FUNDAMENTAÇÃO TEÓRICA DO SEU TRABALHO
+% Este capítulo deve apresentar:
+% - Conceitos básicos da área
+% - Estado da arte 
+% - Trabalhos relacionados
+% - Base teórica necessária para compreender seu trabalho
+
+A fundamentação teórica estabelece as bases conceituais necessárias para a compreensão do trabalho. Este capítulo deve apresentar os principais conceitos, teorias e trabalhos relacionados ao tema abordado.
+
+\section{Conceitos Básicos}
+
+Apresente aqui os conceitos fundamentais necessários para compreensão do seu trabalho. Defina termos técnicos e explique teorias relevantes.
+
+% EXEMPLOS DE CITAÇÕES (sempre com espaço não-quebrável):
+% Segundo Silva~\cite{silva2023fundamentos}, a teoria X é fundamental para...
+% 
+% Como demonstrado por vários autores~\cite{silva2023fundamentos,chen2023deep}, 
+% o método proposto...
+%
+% A Eq.~\eqref{eq:einstein} foi proposta por Einstein em~1905.
+%
+% A Fig.~\ref{fig:resultados} apresenta os dados obtidos.
+%
+% No início de frase: "A Equação~\eqref{eq:exemplo} demonstra que..."
+
+\section{Estado da Arte}
+
+Apresente aqui uma revisão da literatura sobre o tema, mostrando o que já foi pesquisado e quais são as lacunas existentes.
+
+\section{Trabalhos Relacionados}
+
+Compare seu trabalho com outros similares, destacando as diferenças e contribuições.
+
+% ===================================================================
+
+\chapter{METODOLOGIA}
+
+% ESCREVA AQUI A METODOLOGIA DO SEU TRABALHO
+% Este capítulo deve descrever:
+% - Tipo de pesquisa
+% - Procedimentos metodológicos
+% - Materiais e métodos
+% - Forma de análise dos dados
+
+Este capítulo descreve a metodologia utilizada para o desenvolvimento do trabalho, incluindo os procedimentos, técnicas e ferramentas empregadas.
+
+\section{Tipo de Pesquisa}
+
+Descreva o tipo de pesquisa (qualitativa, quantitativa, experimental, etc.) e justifique a escolha.
+
+\section{Materiais e Métodos}
+
+Descreva os materiais utilizados, equipamentos, software, metodologias específicas, etc.
+
+% EXEMPLO DE LISTA DE MATERIAIS
+\begin{itemize}
+    \item Material 1
+    \item Material 2  
+    \item Software utilizado
+    \item Equipamentos
+\end{itemize}
+
+\section{Procedimentos}
+
+Descreva passo a passo como o trabalho foi desenvolvido.
+
+% ===================================================================
+
+\chapter{RESULTADOS E DISCUSSÃO}
+
+% ESCREVA AQUI OS RESULTADOS DO SEU TRABALHO
+% Este capítulo deve apresentar:
+% - Resultados obtidos
+% - Análise dos resultados
+% - Discussão sobre os achados
+% - Comparação com trabalhos relacionados
+
+Este capítulo apresenta os resultados obtidos durante o desenvolvimento do trabalho e sua discussão.
+
+\section{Resultados Obtidos}
+
+Apresente aqui os principais resultados do seu trabalho.
+
+% EXEMPLO DE TABELA (boas práticas)
+\begin{table}[tb]                                      % [tb] = topo ou base
+\centering
+\caption{Resultados experimentais do método proposto} % Caption descritivo antes da tabela
+\label{tab:resultados_experimento}                    % Label descritivo
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Item} & \textbf{Valor 1} & \textbf{Valor 2} \\
+\hline
+A & 10 & 20 \\
+B & 15 & 25 \\
+C & 8 & 18 \\
+\hline
+\end{tabular}
+\caption*{Fonte: Elaboração própria.}
+\end{table}
+%
+% No texto: "Os resultados da Tab.~\ref{tab:resultados_experimento} indicam..."
+% Alternativa com booktabs (mais profissional):
+% \begin{tabular}{lcc}
+% \toprule
+% Item & Valor 1 & Valor 2 \\
+% \midrule
+% A & 10 & 20 \\
+% B & 15 & 25 \\
+% C & 8 & 18 \\
+% \bottomrule
+% \end{tabular}
+
+\section{Análise dos Resultados}
+
+Analise e interprete os resultados obtidos.
+
+\section{Discussão}
+
+Discuta os resultados, compare com a literatura e apresente suas interpretações.
+
+% ===================================================================
+
+\chapter{CONSIDERAÇÕES FINAIS}
+
+% ESCREVA AQUI AS CONCLUSÕES DO SEU TRABALHO
+% Este capítulo deve apresentar:
+% - Síntese dos principais resultados
+% - Conclusões sobre os objetivos
+% - Limitações do trabalho
+% - Sugestões para trabalhos futuros
+
+Este capítulo apresenta as principais conclusões do trabalho, suas limitações e sugestões para trabalhos futuros.
+
+\section{Síntese dos Resultados}
+
+Faça uma síntese dos principais resultados obtidos.
+
+\section{Conclusões}
+
+Apresente as conclusões principais do trabalho, relacionando-as com os objetivos propostos.
+
+\section{Limitações}
+
+Discuta as limitações encontradas durante o desenvolvimento do trabalho.
+
+\section{Trabalhos Futuros}
+
+Sugira possíveis extensões ou melhorias para trabalhos futuros.
+
+% ===================================================================
+% ELEMENTOS PÓS-TEXTUAIS
+% ===================================================================
+
+% Inicia a parte pós-textual do documento
+\postextual
+
+\newpage
+
+% ===================================================================
+% REFERÊNCIAS BIBLIOGRÁFICAS
+% ===================================================================
+
+% IMPORTANTE: Para usar citações e referências, você precisa:
+% 1. O arquivo referencias.bib já está incluído com 22 categorias de exemplos
+% 2. Substitua os exemplos pelas suas próprias referências no formato BibTeX
+% 3. Citar as referências no texto usando \cite{chave}
+% 4. Compilar o documento múltiplas vezes no Overleaf
+
+% O arquivo referencias.bib inclui exemplos de:
+% - Livros, artigos científicos, teses
+% - Sites governamentais e empresariais
+% - Documentação técnica e software
+% - Vídeos educacionais e podcasts
+% - Preprints e bases de dados
+% - Legislação e normas técnicas
+% - E muito mais!
+
+% Para citar no texto: \cite{chave_da_referencia}
+% Exemplos: \cite{silva2023fundamentos}, \cite{github2023copilot}, \cite{ibge2023censo}
+
+\bibliography{referencias}
+
+% ===================================================================
+% INSTRUÇÕES PARA USAR ESTE TEMPLATE NO OVERLEAF
+% ===================================================================
+
+% PASSO 1: FAZER UPLOAD DOS ARQUIVOS NECESSÁRIOS
+% - template.tex (este arquivo)
+% - referencias.bib (arquivo com 22 categorias de exemplos)
+% - Logos da sua instituição: unesp_logo.jpg e igce_brasao.jpg
+% - Coloque todos na raiz do projeto (mesmo diretório)
+
+% PASSO 2: PERSONALIZAR O DOCUMENTO
+% - Substitua "NOME DO PRIMEIRO AUTOR" pelo seu nome
+% - Substitua "TÍTULO DO SEU TRABALHO" pelo título real
+% - Substitua "NOME DO SEU CURSO" pelo seu curso
+% - Substitua "NOME DA DISCIPLINA" pela disciplina
+% - Substitua "NOME DO PROFESSOR" pelo nome do professor
+
+% PASSO 3: ESCREVER O CONTEÚDO
+% - Substitua os textos exemplo pelo conteúdo real
+% - Adicione mais capítulos conforme necessário
+% - Use os exemplos fornecidos como guia
+
+% PASSO 4: PERSONALIZAR REFERÊNCIAS
+% - Use o arquivo referencias.bib fornecido (22 categorias de exemplos)
+% - Substitua os exemplos por suas próprias referências
+% - Cite no texto usando \cite{chave}
+% - Exemplos disponíveis: sites, documentação, vídeos, preprints, etc.
+
+% PASSO 5: COMPILAR
+% - No Overleaf, clique em "Recompile"
+% - Se houver erros, verifique se todas as imagens foram carregadas
+% - Se usar citações, compile algumas vezes para resolver referências
+
+% DICAS IMPORTANTES:
+% - Mantenha as configurações ABNT (não altere as seções iniciais)
+% - Use sempre \chapter para capítulos principais
+% - Use \section, \subsection, \subsubsection para subdivisões
+% - Para figuras, use sempre \caption e \caption*{Fonte: ...}
+% - Para tabelas, use sempre \caption e \caption*{Fonte: ...}
+% - Numere as equações importantes
+% - Cite sempre as fontes das informações
+
+% ===================================================================
+% EXEMPLOS DE ELEMENTOS PARA DIFERENTES ÁREAS DO CONHECIMENTO
+% ===================================================================
+
+% ===================================================================
+% EXEMPLOS PARA CIÊNCIAS EXATAS E ENGENHARIAS
+% ===================================================================
+
+% EQUAÇÕES MATEMÁTICAS (com pontuação adequada):
+% \begin{equation}
+% \nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0} \,,
+% \label{eq:gauss}
+% \end{equation}
+% No texto: "conforme a Eq.~\eqref{eq:gauss}, o campo elétrico..."
+
+% SISTEMA DE EQUAÇÕES:
+% \begin{align}
+% x + y &= 5 \,, \label{eq:sistema_a} \\
+% 2x - y &= 1 \,. \label{eq:sistema_b}
+% \end{align}
+
+% INTEGRAL COM DIFERENCIAL CORRETO:
+% A probabilidade é dada por
+% \begin{equation}
+% P = \int_{0}^{\infty} f(x) \, \mathrm{d}x \,.
+% \label{eq:probabilidade}
+% \end{equation}
+
+% UNIDADES (se usar siunitx) - sempre com espaço não-quebrável:
+% A temperatura foi de~\SI{25}{\celsius} e a pressão de~\SI{1.2e5}{\pascal}.
+
+% FÓRMULAS QUÍMICAS (se usar mhchem):
+% \ce{H2SO4 + 2NaOH -> Na2SO4 + 2H2O}
+
+% SUBSCRIPTS DESCRITIVOS (não itálicos):
+% $N_\mathrm{partículas}$ ao invés de $N_{partículas}$
+
+% ===================================================================
+% EXEMPLOS PARA COMPUTAÇÃO E TECNOLOGIA
+% ===================================================================
+
+% CÓDIGO DE PROGRAMAÇÃO (boas práticas):
+% \begin{lstlisting}[language=Python, caption=Implementação do algoritmo de Fibonacci, label=lst:fibonacci]
+% def fibonacci(n):
+%     """Calcula o n-ésimo número de Fibonacci"""
+%     if n <= 1:
+%         return n
+%     return fibonacci(n-1) + fibonacci(n-2)
+% 
+% # Exemplo de uso
+% resultado = fibonacci(10)
+% print(f"O 10º número de Fibonacci é: {resultado}")
+% \end{lstlisting}
+%
+% No texto: "O Código~\ref{lst:fibonacci} apresenta a implementação..."
+% Use labels descritivos: lst:nome_funcionalidade
+
+% ALGORITMO EM PSEUDOCÓDIGO (se usar algorithm):
+% \begin{algorithm}[tb]                                % [tb] = topo ou base
+% \caption{Algoritmo de busca binária}                 % Caption descritivo
+% \label{alg:busca_binaria}                            % Label para referência
+% \begin{algorithmic}[1]                               % [1] = numera todas as linhas
+% \REQUIRE $array$ ordenado, $valor$ a ser buscado
+% \ENSURE índice do $valor$ ou $-1$ se não encontrado
+% \STATE $inicio \leftarrow 0$
+% \STATE $fim \leftarrow |array| - 1$
+% \WHILE{$inicio \leq fim$}
+%     \STATE $meio \leftarrow \lfloor(inicio + fim) / 2\rfloor$
+%     \IF{$array[meio] = valor$}
+%         \RETURN $meio$
+%     \ELSIF{$array[meio] < valor$}
+%         \STATE $inicio \leftarrow meio + 1$
+%     \ELSE
+%         \STATE $fim \leftarrow meio - 1$
+%     \ENDIF
+% \ENDWHILE
+% \RETURN $-1$
+% \end{algorithmic}
+% \end{algorithm}
+%
+% No texto: "O Algoritmo~\ref{alg:busca_binaria} implementa a busca..."
+
+% URL COM QUEBRA DE LINHA:
+% Site oficial: \url{https://www.exemplo.com/pagina-muito-longa}
+
+% ===================================================================
+% EXEMPLOS PARA CIÊNCIAS HUMANAS E SOCIAIS
+% ===================================================================
+
+% CITAÇÃO DIRETA LONGA (mais de 3 linhas):
+% \begin{citacao}
+% Esta é uma citação longa que deve ser formatada em parágrafo
+% separado, com recuo à esquerda e fonte menor, conforme as
+% normas ABNT para citações diretas longas. O texto deve ter
+% mais de três linhas para usar este formato.
+% \end{citacao}
+
+% EPÍGRAFE (se usar epigraph):
+% \epigraph{A educação é a arma mais poderosa que você pode usar para mudar o mundo.}{Nelson Mandela}
+
+% EXEMPLOS LINGUÍSTICOS (se usar gb4e):
+% \begin{exe}
+% \ex O menino comprou o livro.
+% \ex *O menino compraram o livro.
+% \end{exe}
+
+% ===================================================================
+% EXEMPLOS GERAIS PARA TODAS AS ÁREAS
+% ===================================================================
+
+% FIGURA COM REFERÊNCIA:
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{minha_figura.png}
+%   \caption{Exemplo de figura com dados importantes}
+%   \caption*{Fonte: \cite{silva2020}}
+%   \label{fig:exemplo}
+% \end{figure}
+% 
+% No texto: "conforme mostra a Figura \ref{fig:exemplo}..."
+
+% TABELA PROFISSIONAL (se usar booktabs):
+% \begin{table}[h]
+% \centering
+% \caption{Resultados do experimento}
+% \label{tab:resultados}
+% \begin{tabular}{lrrr}
+% \toprule
+% Método & Precisão & Recall & F1-Score \\
+% \midrule
+% Método A & 0.85 & 0.80 & 0.82 \\
+% Método B & 0.90 & 0.75 & 0.82 \\
+% Método C & 0.88 & 0.85 & 0.86 \\
+% \bottomrule
+% \end{tabular}
+% \caption*{Fonte: Elaboração própria.}
+% \end{table}
+
+% LISTA COM SUBITENS:
+% \begin{enumerate}
+%     \item Primeiro item principal
+%     \begin{enumerate}
+%         \item Subitem A
+%         \item Subitem B
+%     \end{enumerate}
+%     \item Segundo item principal
+%     \item Terceiro item principal
+% \end{enumerate}
+
+% LISTA NÃO NUMERADA:
+% \begin{itemize}
+%     \item Primeiro ponto
+%     \item Segundo ponto
+%     \item Terceiro ponto
+% \end{itemize}
+
+% NOTA DE RODAPÉ:
+% Este texto tem uma nota\footnote{Esta é uma nota de rodapé explicativa.}.
+
+% REFERÊNCIA CRUZADA:
+% Como visto no Capítulo \ref{chap:metodologia}, Seção \ref{sec:materiais}...
+
+% ===================================================================
+% CONFIGURAÇÕES OPCIONAIS ADICIONAIS
+% ===================================================================
+
+% QUEBRA DE PÁGINA FORÇADA:
+% \newpage
+
+% QUEBRA DE COLUNA (se usar multicol):
+% \columnbreak
+
+% ESPAÇAMENTO VERTICAL PERSONALIZADO:
+% \vspace{2cm}
+
+% LINHA HORIZONTAL:
+% \hrule
+
+% TEXTO EM DESTAQUE:
+% \textbf{texto em negrito}
+% \textit{texto em itálico}
+% \underline{texto sublinhado}
+% \textsc{Texto em Versalete}
+
+% MARCADORES ESPECIAIS:
+% \checkmark (se amssymb estiver carregado)
+% \times para indicar "não"
+% \bullet para marcadores simples
+
+% --- FIM DO DOCUMENTO ---
+\end{document} 

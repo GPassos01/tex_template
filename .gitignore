@@ -1,0 +1,147 @@
+# ===================================================================
+# .gitignore para Template ABNT LaTeX
+# ===================================================================
+# Configurado para projetos LaTeX com organização profissional
+# Baseado em: https://github.com/loicdtx/paperProject
+# ===================================================================
+
+# LaTeX core files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# LaTeX intermediate files
+*.fdb_latexmk
+*.synctex.gz
+*.fls
+*.run.xml
+*.bcf
+*.blg
+*.bbl
+*.auxlock
+
+# BibTeX files
+*.bib.bak
+*.bib.sav
+
+# LaTeX specialized files
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.figlist
+*.makefile
+*.figlist
+*.makefile
+*.fdblatexmk
+*.glsdefs
+
+# LaTeX Beamer files
+*.snm
+*.nav
+*.vrb
+
+# LaTeX glossaries
+*.ist
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+# ===================================================================
+# ARQUIVOS DE OUTPUT (não versionar arquivos gerados)
+# ===================================================================
+
+# Diretório de output completo
+output/
+temp/
+
+# PDFs gerados (descomente se quiser versionar PDFs finais)
+*.pdf
+!assets/demo/*.pdf     # Mantém PDFs de demonstração
+!assets/logos/*.pdf    # Mantém logos em PDF
+
+# ===================================================================
+# ARQUIVOS ESPECÍFICOS DO TEMPLATE
+# ===================================================================
+
+# Backup automático
+backup/
+old/
+*.backup
+
+# Arquivos temporários de edição
+*.tmp
+*.temp
+*~
+.#*
+#*#
+
+# TeXShop
+*.pdfsync
+
+# TeXworks
+*.backup
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Editor backup files
+*~
+.#*
+#*#
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+
+# Backup folders
+backup/
+old/
+
+# Build directories
+build/
+dist/ 
