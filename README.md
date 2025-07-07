@@ -1,10 +1,6 @@
 # 📝 Template ABNT para LaTeX/Overleaf
 
 <p align="center">
-  <img src="assets/demo/template-preview.png" alt="Template Preview" width="600"/>
-</p>
-
-<p align="center">
   <strong>Template completo para trabalhos acadêmicos brasileiros seguindo normas ABNT</strong>
 </p>
 
